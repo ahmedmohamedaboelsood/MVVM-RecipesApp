@@ -1,0 +1,6 @@
+framework module Pods_BrightskiesTask_BrightskiesTaskUITests {
+  umbrella header "Pods-BrightskiesTask-BrightskiesTaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
