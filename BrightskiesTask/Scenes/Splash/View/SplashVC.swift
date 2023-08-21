@@ -38,6 +38,16 @@ class SplashVC: UIViewController {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
             self.appLogoImage.transform = CGAffineTransform.identity
             self.appLogoImage.alpha = 1.0
+            self.navigateToLogin()
         }, completion: nil)
+    }
+    
+    func navigateToLogin(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            let vc = LoginVC()
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
     }
 }
