@@ -27,6 +27,11 @@
 		21A759D92A927F9D00B4A4FF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759D72A927F9D00B4A4FF /* LoginVC.swift */; };
 		21A759DA2A927F9D00B4A4FF /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A759D82A927F9D00B4A4FF /* LoginVC.xib */; };
 		21A759DE2A937A6A00B4A4FF /* LoginVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759DD2A937A6A00B4A4FF /* LoginVCViewModel.swift */; };
+		21A759E42A93B13F00B4A4FF /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759E32A93B13F00B4A4FF /* HomeDataModel.swift */; };
+		21A759E72A93B47000B4A4FF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759E52A93B47000B4A4FF /* HomeVC.swift */; };
+		21A759E82A93B47000B4A4FF /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A759E62A93B47000B4A4FF /* HomeVC.xib */; };
+		21A759EC2A93B4DA00B4A4FF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759EA2A93B4DA00B4A4FF /* HomeTableViewCell.swift */; };
+		21A759ED2A93B4DA00B4A4FF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A759EB2A93B4DA00B4A4FF /* HomeTableViewCell.xib */; };
 		600E11974C6303ECC0BB50DE /* Pods_BrightskiesTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD30241FAFE1D1980CF963 /* Pods_BrightskiesTaskTests.framework */; };
 		B5CD7C3F69FC938CDC868135 /* Pods_BrightskiesTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D451AE0B3F758AE437815992 /* Pods_BrightskiesTask.framework */; };
 		EA6E2266A038EE574AECF8B2 /* Pods_BrightskiesTask_BrightskiesTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFF9B7D482A0FCB9622C7CD /* Pods_BrightskiesTask_BrightskiesTaskUITests.framework */; };
@@ -74,6 +79,11 @@
 		21A759D72A927F9D00B4A4FF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		21A759D82A927F9D00B4A4FF /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		21A759DD2A937A6A00B4A4FF /* LoginVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCViewModel.swift; sourceTree = "<group>"; };
+		21A759E32A93B13F00B4A4FF /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
+		21A759E52A93B47000B4A4FF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		21A759E62A93B47000B4A4FF /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		21A759EA2A93B4DA00B4A4FF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		21A759EB2A93B4DA00B4A4FF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		28FD30241FAFE1D1980CF963 /* Pods_BrightskiesTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrightskiesTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFF9B7D482A0FCB9622C7CD /* Pods_BrightskiesTask_BrightskiesTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrightskiesTask_BrightskiesTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5E9CD727CA5B59BAAA77C8 /* Pods-BrightskiesTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrightskiesTask.debug.xcconfig"; path = "Target Support Files/Pods-BrightskiesTask/Pods-BrightskiesTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +227,9 @@
 		21A759BB2A9231EA00B4A4FF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				21A759E12A93B11A00B4A4FF /* ViewModel */,
+				21A759E02A93B11400B4A4FF /* View */,
+				21A759DF2A93B10D00B4A4FF /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -295,6 +308,40 @@
 				21A759DD2A937A6A00B4A4FF /* LoginVCViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		21A759DF2A93B10D00B4A4FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21A759E32A93B13F00B4A4FF /* HomeDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21A759E02A93B11400B4A4FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21A759E92A93B4B500B4A4FF /* Cell */,
+				21A759E52A93B47000B4A4FF /* HomeVC.swift */,
+				21A759E62A93B47000B4A4FF /* HomeVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21A759E12A93B11A00B4A4FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		21A759E92A93B4B500B4A4FF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				21A759EA2A93B4DA00B4A4FF /* HomeTableViewCell.swift */,
+				21A759EB2A93B4DA00B4A4FF /* HomeTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		25482933A3D4AAAF58A17CA4 /* Pods */ = {
@@ -430,6 +477,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A759DA2A927F9D00B4A4FF /* LoginVC.xib in Resources */,
+				21A759ED2A93B4DA00B4A4FF /* HomeTableViewCell.xib in Resources */,
+				21A759E82A93B47000B4A4FF /* HomeVC.xib in Resources */,
 				21A759BA2A9231C500B4A4FF /* SplashVC.xib in Resources */,
 				21A759C82A92486600B4A4FF /* Colors.xcassets in Resources */,
 				21A7598F2A9230E200B4A4FF /* LaunchScreen.storyboard in Resources */,
@@ -562,12 +611,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A759D92A927F9D00B4A4FF /* LoginVC.swift in Sources */,
+				21A759E72A93B47000B4A4FF /* HomeVC.swift in Sources */,
 				21A759C32A923B0600B4A4FF /* TargetType.swift in Sources */,
 				21A759CB2A924D2D00B4A4FF /* Colors.swift in Sources */,
 				21A759DE2A937A6A00B4A4FF /* LoginVCViewModel.swift in Sources */,
 				21A759802A9230E000B4A4FF /* AppDelegate.swift in Sources */,
+				21A759EC2A93B4DA00B4A4FF /* HomeTableViewCell.swift in Sources */,
 				21A759C62A923BD200B4A4FF /* internetConnections.swift in Sources */,
 				21A759D12A9257CD00B4A4FF /* Observable.swift in Sources */,
+				21A759E42A93B13F00B4A4FF /* HomeDataModel.swift in Sources */,
 				21A759D52A92593900B4A4FF /* UIViewController + Extentions.swift in Sources */,
 				21A759B92A9231C500B4A4FF /* SplashVC.swift in Sources */,
 				21A7598A2A9230E000B4A4FF /* BrightskiesTask.xcdatamodeld in Sources */,
