@@ -11,24 +11,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="BrightskiesTask" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="3bs-Zv-vmj" id="0t9-My-xAP"/>
                 <outlet property="tableView" destination="p8h-Dd-Hol" id="NVQ-o2-uJL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="p8h-Dd-Hol">
-                    <rect key="frame" x="0.0" y="59" width="375" height="608"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-Zv-vmj">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                    <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="p8h-Dd-Hol" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Bft-IX-eiv"/>
+                <constraint firstItem="3bs-Zv-vmj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="CY2-qt-xLm"/>
+                <constraint firstItem="3bs-Zv-vmj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RXZ-3B-dAO"/>
                 <constraint firstItem="p8h-Dd-Hol" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WsM-7m-wXB"/>
                 <constraint firstItem="p8h-Dd-Hol" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZVC-gN-1bt"/>
                 <constraint firstAttribute="bottom" secondItem="p8h-Dd-Hol" secondAttribute="bottom" id="noL-qe-8by"/>
