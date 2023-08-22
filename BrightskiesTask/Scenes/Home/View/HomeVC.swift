@@ -8,30 +8,68 @@
 import UIKit
 
 class HomeVC: UIViewController {
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    //MARK: - Variables
+    let viewModel = HomeViewModel()
+    var cellDataSource : [HomeCellViewModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindLoadingIndicator()
+        bindRemoteData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor =  AppColors.green.color
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.getData()
+    }
+    //MARK: - Functions
     func setupUI(){
+        title = "Recipes"
         tableView.register(UINib(nibName: HomeTableViewCell.ID, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.ID)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = UIColor.clear
+        viewModel.delegate = self
+    }
+    
+    func bindLoadingIndicator(){
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self else{return}
+            guard let isLoading = isLoading else {return}
+            if isLoading {
+                self.activityIndicator.startAnimating()
+            }else{
+                self.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    
+    func bindRemoteData(){
+        viewModel.cellDataSourse.bind { [weak self] movies in
+            guard let self = self else{return}
+            guard let movies = movies else {return}
+            print(movies,"on sucsess")
+            self.cellDataSource = movies
+            self.tableView.reloadData()
+        }
     }
 }
 
 
 extension HomeVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfRows(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.ID) as! HomeTableViewCell
-        
+        cell.setupCellData(viewModel: cellDataSource[indexPath.row])
         return cell
     }
     
@@ -44,29 +82,13 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource {
     }
 }
 
-
-//func extractNumbersManuallyFromString(_ input: String) -> [Int] {
-//    var currentNumber = ""
-//    var numbers: [Int] = []
-//
-//    for char in input {
-//        if char.isNumber {
-//            currentNumber.append(char)
-//        } else if !currentNumber.isEmpty {
-//            if let number = Int(currentNumber) {
-//                numbers.append(number)
-//            }
-//            currentNumber = ""
-//        }
-//    }
-//
-//    if !currentNumber.isEmpty, let number = Int(currentNumber) {
-//        numbers.append(number)
-//    }
-//
-//    return numbers
-//}
-//
-//let inputString = "Hello123 World456 Test789"
-//let numbers = extractNumbersManuallyFromString(inputString)
-//print(numbers)  // Output: [123, 456, 789]
+extension HomeVC : HomeViewModelDelegate{
+    func requestFail(error: NetworkError) {
+        switch error{
+        case .urlError , .cantParseData , .not200:
+            showALert(message: "Something went wrong")
+        case .internetConnection:
+            showALert(message: "Check your internet connection")
+        }
+    }
+}

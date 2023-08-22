@@ -32,6 +32,11 @@
 		21A759E82A93B47000B4A4FF /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A759E62A93B47000B4A4FF /* HomeVC.xib */; };
 		21A759EC2A93B4DA00B4A4FF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759EA2A93B4DA00B4A4FF /* HomeTableViewCell.swift */; };
 		21A759ED2A93B4DA00B4A4FF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A759EB2A93B4DA00B4A4FF /* HomeTableViewCell.xib */; };
+		21A759F12A954BB400B4A4FF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759F02A954BB400B4A4FF /* HomeViewModel.swift */; };
+		21A759F42A954C5E00B4A4FF /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759F32A954C5E00B4A4FF /* AppConfiguration.swift */; };
+		21A759F82A954FA900B4A4FF /* HomeVCNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759F72A954FA900B4A4FF /* HomeVCNetworking.swift */; };
+		21A759FA2A95501100B4A4FF /* HomeVCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759F92A95501100B4A4FF /* HomeVCApi.swift */; };
+		21A759FE2A9550CD00B4A4FF /* HomeTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759FD2A9550CD00B4A4FF /* HomeTableViewCellViewModel.swift */; };
 		600E11974C6303ECC0BB50DE /* Pods_BrightskiesTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD30241FAFE1D1980CF963 /* Pods_BrightskiesTaskTests.framework */; };
 		B5CD7C3F69FC938CDC868135 /* Pods_BrightskiesTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D451AE0B3F758AE437815992 /* Pods_BrightskiesTask.framework */; };
 		EA6E2266A038EE574AECF8B2 /* Pods_BrightskiesTask_BrightskiesTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFF9B7D482A0FCB9622C7CD /* Pods_BrightskiesTask_BrightskiesTaskUITests.framework */; };
@@ -84,6 +89,11 @@
 		21A759E62A93B47000B4A4FF /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		21A759EA2A93B4DA00B4A4FF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		21A759EB2A93B4DA00B4A4FF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		21A759F02A954BB400B4A4FF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		21A759F32A954C5E00B4A4FF /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		21A759F72A954FA900B4A4FF /* HomeVCNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCNetworking.swift; sourceTree = "<group>"; };
+		21A759F92A95501100B4A4FF /* HomeVCApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCApi.swift; sourceTree = "<group>"; };
+		21A759FD2A9550CD00B4A4FF /* HomeTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		28FD30241FAFE1D1980CF963 /* Pods_BrightskiesTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrightskiesTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFF9B7D482A0FCB9622C7CD /* Pods_BrightskiesTask_BrightskiesTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrightskiesTask_BrightskiesTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5E9CD727CA5B59BAAA77C8 /* Pods-BrightskiesTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrightskiesTask.debug.xcconfig"; path = "Target Support Files/Pods-BrightskiesTask/Pods-BrightskiesTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +240,7 @@
 				21A759E12A93B11A00B4A4FF /* ViewModel */,
 				21A759E02A93B11400B4A4FF /* View */,
 				21A759DF2A93B10D00B4A4FF /* Model */,
+				21A759E92A93B4B500B4A4FF /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -253,6 +264,8 @@
 		21A759BE2A92355F00B4A4FF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				21A759F62A954F8100B4A4FF /* HomeVCApi */,
+				21A759F22A954C2600B4A4FF /* Appconfiguration */,
 				21A759BF2A92356C00B4A4FF /* Base */,
 			);
 			path = Networking;
@@ -321,7 +334,6 @@
 		21A759E02A93B11400B4A4FF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				21A759E92A93B4B500B4A4FF /* Cell */,
 				21A759E52A93B47000B4A4FF /* HomeVC.swift */,
 				21A759E62A93B47000B4A4FF /* HomeVC.xib */,
 			);
@@ -331,6 +343,7 @@
 		21A759E12A93B11A00B4A4FF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				21A759F02A954BB400B4A4FF /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -338,10 +351,44 @@
 		21A759E92A93B4B500B4A4FF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				21A759EA2A93B4DA00B4A4FF /* HomeTableViewCell.swift */,
-				21A759EB2A93B4DA00B4A4FF /* HomeTableViewCell.xib */,
+				21A759FC2A9550A000B4A4FF /* ViewModel */,
+				21A759FB2A95509900B4A4FF /* View */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		21A759F22A954C2600B4A4FF /* Appconfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				21A759F32A954C5E00B4A4FF /* AppConfiguration.swift */,
+			);
+			path = Appconfiguration;
+			sourceTree = "<group>";
+		};
+		21A759F62A954F8100B4A4FF /* HomeVCApi */ = {
+			isa = PBXGroup;
+			children = (
+				21A759F72A954FA900B4A4FF /* HomeVCNetworking.swift */,
+				21A759F92A95501100B4A4FF /* HomeVCApi.swift */,
+			);
+			path = HomeVCApi;
+			sourceTree = "<group>";
+		};
+		21A759FB2A95509900B4A4FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21A759EB2A93B4DA00B4A4FF /* HomeTableViewCell.xib */,
+				21A759EA2A93B4DA00B4A4FF /* HomeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21A759FC2A9550A000B4A4FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				21A759FD2A9550CD00B4A4FF /* HomeTableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		25482933A3D4AAAF58A17CA4 /* Pods */ = {
@@ -613,7 +660,10 @@
 				21A759D92A927F9D00B4A4FF /* LoginVC.swift in Sources */,
 				21A759E72A93B47000B4A4FF /* HomeVC.swift in Sources */,
 				21A759C32A923B0600B4A4FF /* TargetType.swift in Sources */,
+				21A759F42A954C5E00B4A4FF /* AppConfiguration.swift in Sources */,
+				21A759FA2A95501100B4A4FF /* HomeVCApi.swift in Sources */,
 				21A759CB2A924D2D00B4A4FF /* Colors.swift in Sources */,
+				21A759FE2A9550CD00B4A4FF /* HomeTableViewCellViewModel.swift in Sources */,
 				21A759DE2A937A6A00B4A4FF /* LoginVCViewModel.swift in Sources */,
 				21A759802A9230E000B4A4FF /* AppDelegate.swift in Sources */,
 				21A759EC2A93B4DA00B4A4FF /* HomeTableViewCell.swift in Sources */,
@@ -624,7 +674,9 @@
 				21A759B92A9231C500B4A4FF /* SplashVC.swift in Sources */,
 				21A7598A2A9230E000B4A4FF /* BrightskiesTask.xcdatamodeld in Sources */,
 				21A759C12A92359300B4A4FF /* BaseApi.swift in Sources */,
+				21A759F12A954BB400B4A4FF /* HomeViewModel.swift in Sources */,
 				21A759822A9230E000B4A4FF /* SceneDelegate.swift in Sources */,
+				21A759F82A954FA900B4A4FF /* HomeVCNetworking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,6 @@ struct HomeDataModel: Decodable {
     let description: String
     let highlighted: Bool
     let ingredients: [String]
-    let deliverableIngredients: [String]
 }
 
 typealias HomeData = [HomeDataModel]
