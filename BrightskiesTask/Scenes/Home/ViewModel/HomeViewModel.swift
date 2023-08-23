@@ -46,4 +46,9 @@ class HomeViewModel {
     func mapData(){
         self.cellDataSourse.value = self.dataSourse?.compactMap({HomeCellViewModel($0)})
     }
+    
+    func retrieMovie(recipeID : String) -> HomeDataModel? {
+        guard let remoteMovie = dataSourse?.first(where:{$0.id == recipeID}) else {return nil}
+        return remoteMovie
+    }
 }
