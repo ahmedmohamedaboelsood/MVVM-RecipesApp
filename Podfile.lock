@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.7.1)
+  - Cosmos (23.0.0)
   - IQKeyboardManagerSwift (6.5.12)
   - Kingfisher (7.9.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Cosmos
   - IQKeyboardManagerSwift
   - Kingfisher
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Cosmos
     - IQKeyboardManagerSwift
     - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
   Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
 
-PODFILE CHECKSUM: 4e3bc31500607f355a7f41a49b80f49fcca3914d
+PODFILE CHECKSUM: 2e7d5284fb2c8cc779cd8e99a45ee3245df10205
 
 COCOAPODS: 1.12.1

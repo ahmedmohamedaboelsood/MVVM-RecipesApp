@@ -18,5 +18,5 @@ target 'BrightskiesTask' do
 pod 'IQKeyboardManagerSwift'
 pod 'Alamofire' 
 pod 'Kingfisher'
-
+pod 'Cosmos'
 end

@@ -24,10 +24,20 @@ class HomeVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         viewModel.getData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = AppColors.green.color
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = .clear
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
     //MARK: - Functions
     func setupUI(){
-        navigationController?.navigationBar.barTintColor = AppColors.green.color.withAlphaComponent(0.1)
-        navigationController?.navigationBar.prefersLargeTitles = true
         title = "Recipes"
         tableView.register(UINib(nibName: HomeTableViewCell.ID, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.ID)
         tableView.delegate = self
@@ -49,13 +59,20 @@ class HomeVC: UIViewController {
     }
     
     func bindRemoteData(){
-        viewModel.cellDataSourse.bind { [weak self] movies in
+        viewModel.cellDataSourse.bind { [weak self] recipe in
             guard let self = self else{return}
-            guard let movies = movies else {return}
-            print(movies,"on sucsess")
-            self.cellDataSource = movies
+            guard let recipes = recipe else {return}
+            print(recipes,"on sucsess")
+            self.cellDataSource = recipes
             self.tableView.reloadData()
         }
+    }
+    
+    func openRecipeDetails(recipeID : String){
+        guard let recipe = viewModel.retrieRecipe(recipeID: recipeID) else {return}
+        let detailsViewModel = DetailsViewModel(recipe: recipe)
+        let detailsVC = DetailsVC(viewModel: detailsViewModel)
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
@@ -76,8 +93,9 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        self.openRecipeDetails(recipeID: cellDataSource[indexPath.row].id)  
     }
+
 }
 
 extension HomeVC : HomeViewModelDelegate{

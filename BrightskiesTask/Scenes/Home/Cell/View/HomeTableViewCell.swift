@@ -32,9 +32,7 @@ class HomeTableViewCell: UITableViewCell {
         cellContainerView.layer.borderColor = AppColors.green.color.cgColor
         cellContainerView.layer.borderWidth = 1
         recipeImage.layer.cornerRadius = recipeImage.bounds.height / 2
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.clear
-        self.selectedBackgroundView = backgroundView
+        self.selectionStyle = .none
     }
     
     func setupCellData(viewModel: HomeCellViewModel){
@@ -48,25 +46,5 @@ class HomeTableViewCell: UITableViewCell {
         recipeTitle.text = viewModel.name
         let time = extractNumbersManuallyFromString(viewModel.time).first
         recipeTime.text = "\(time ?? 0) Min"
-    }
-    
-    func extractNumbersManuallyFromString(_ input: String) -> [Int] {
-        var currentNumber = ""
-        var numbers: [Int] = []
-    
-        for char in input {
-            if char.isNumber {
-                currentNumber.append(char)
-            } else if !currentNumber.isEmpty {
-                if let number = Int(currentNumber) {
-                    numbers.append(number)
-                }
-                currentNumber = ""
-            }
-        }
-        if !currentNumber.isEmpty, let number = Int(currentNumber) {
-            numbers.append(number)
-        }
-        return numbers
     }
 }
