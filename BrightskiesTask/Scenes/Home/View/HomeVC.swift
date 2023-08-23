@@ -21,15 +21,13 @@ class HomeVC: UIViewController {
         bindRemoteData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor =  AppColors.green.color
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         viewModel.getData()
     }
     //MARK: - Functions
     func setupUI(){
+        navigationController?.navigationBar.barTintColor = AppColors.green.color.withAlphaComponent(0.1)
+        navigationController?.navigationBar.prefersLargeTitles = true
         title = "Recipes"
         tableView.register(UINib(nibName: HomeTableViewCell.ID, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.ID)
         tableView.delegate = self
