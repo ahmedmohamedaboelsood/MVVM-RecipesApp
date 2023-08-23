@@ -59,17 +59,17 @@ class HomeVC: UIViewController {
     }
     
     func bindRemoteData(){
-        viewModel.cellDataSourse.bind { [weak self] movies in
+        viewModel.cellDataSourse.bind { [weak self] recipe in
             guard let self = self else{return}
-            guard let movies = movies else {return}
-            print(movies,"on sucsess")
-            self.cellDataSource = movies
+            guard let recipes = recipe else {return}
+            print(recipes,"on sucsess")
+            self.cellDataSource = recipes
             self.tableView.reloadData()
         }
     }
     
     func openRecipeDetails(recipeID : String){
-        guard let recipe = viewModel.retrieMovie(recipeID: recipeID) else {return}
+        guard let recipe = viewModel.retrieRecipe(recipeID: recipeID) else {return}
         let detailsViewModel = DetailsViewModel(recipe: recipe)
         let detailsVC = DetailsVC(viewModel: detailsViewModel)
         navigationController?.pushViewController(detailsVC, animated: true)
