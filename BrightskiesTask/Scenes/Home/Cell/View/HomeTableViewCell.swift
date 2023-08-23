@@ -43,10 +43,10 @@ class HomeTableViewCell: UITableViewCell {
         if let rate = viewModel.rating {
             recipeRate.text = "\(rate)"
         }else{
-            recipeRate.text = "N/A"
+            recipeRate.text = "n/a"
         }
         recipeTitle.text = viewModel.name
-        var time = extractNumbersManuallyFromString(viewModel.time).first
+        let time = extractNumbersManuallyFromString(viewModel.time).first
         recipeTime.text = "\(time ?? 0) Min"
     }
     

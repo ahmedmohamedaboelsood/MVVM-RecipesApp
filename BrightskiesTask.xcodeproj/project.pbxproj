@@ -133,6 +133,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21232B352A960CBB0071C9CE /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		21A759732A9230E000B4A4FF = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +218,7 @@
 				21A759BC2A92320F00B4A4FF /* Login */,
 				21A759BD2A92321700B4A4FF /* Favorites */,
 				21A759BB2A9231EA00B4A4FF /* Home */,
+				21232B352A960CBB0071C9CE /* Details */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

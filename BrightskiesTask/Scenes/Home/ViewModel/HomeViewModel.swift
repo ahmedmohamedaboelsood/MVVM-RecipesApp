@@ -39,25 +39,8 @@ class HomeViewModel {
                 self.mapData()
             case .failure(let fail):
                 self.delegate?.requestFail(error: fail)
-                switch fail{
-                case .urlError:
-                    print("url")
-                case .cantParseData:
-                    print("parse")
-                case .not200:
-                    print("200")
-                case .internetConnection:
-                    print("internet")
-                }
             }
         }
-    }
-    
-    func setRecipeRate(_ recipe : HomeDataModel) -> String{
-        guard let rating = recipe.rating else {
-            return "N/A"
-        }
-        return "\(rating)"
     }
     
     func mapData(){
