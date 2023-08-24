@@ -13,6 +13,11 @@
 		21232B432A964BD90071C9CE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21232B422A964BD90071C9CE /* Helpers.swift */; };
 		21232B472A9656070071C9CE /* ingrediantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21232B452A9656070071C9CE /* ingrediantsCell.swift */; };
 		21232B482A9656070071C9CE /* ingrediantsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21232B462A9656070071C9CE /* ingrediantsCell.xib */; };
+		21232B4F2A974C200071C9CE /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21232B4D2A974C200071C9CE /* FavoritesVC.swift */; };
+		21232B502A974C200071C9CE /* FavoritesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21232B4E2A974C200071C9CE /* FavoritesVC.xib */; };
+		21232B532A974DAF0071C9CE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21232B522A974DAF0071C9CE /* FavoritesViewModel.swift */; };
+		21232B552A974E030071C9CE /* RecipesCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21232B542A974E030071C9CE /* RecipesCoreDataModel.swift */; };
+		21232B582A977CF50071C9CE /* UINavigetionController + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21232B572A977CF50071C9CE /* UINavigetionController + Extentions.swift */; };
 		21A759802A9230E000B4A4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A7597F2A9230E000B4A4FF /* AppDelegate.swift */; };
 		21A759822A9230E000B4A4FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A759812A9230E000B4A4FF /* SceneDelegate.swift */; };
 		21A7598A2A9230E000B4A4FF /* BrightskiesTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21A759882A9230E000B4A4FF /* BrightskiesTask.xcdatamodeld */; };
@@ -72,6 +77,11 @@
 		21232B422A964BD90071C9CE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		21232B452A9656070071C9CE /* ingrediantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingrediantsCell.swift; sourceTree = "<group>"; };
 		21232B462A9656070071C9CE /* ingrediantsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ingrediantsCell.xib; sourceTree = "<group>"; };
+		21232B4D2A974C200071C9CE /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		21232B4E2A974C200071C9CE /* FavoritesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesVC.xib; sourceTree = "<group>"; };
+		21232B522A974DAF0071C9CE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		21232B542A974E030071C9CE /* RecipesCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCoreDataModel.swift; sourceTree = "<group>"; };
+		21232B572A977CF50071C9CE /* UINavigetionController + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigetionController + Extentions.swift"; sourceTree = "<group>"; };
 		21A7597C2A9230E000B4A4FF /* BrightskiesTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrightskiesTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A7597F2A9230E000B4A4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21A759812A9230E000B4A4FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +191,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		21232B492A974A800071C9CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21232B4D2A974C200071C9CE /* FavoritesVC.swift */,
+				21232B4E2A974C200071C9CE /* FavoritesVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21232B4A2A974A870071C9CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21232B542A974E030071C9CE /* RecipesCoreDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21232B4B2A974A8D0071C9CE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				21232B522A974DAF0071C9CE /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		21A759732A9230E000B4A4FF = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				21A759D42A92593900B4A4FF /* UIViewController + Extentions.swift */,
+				21232B572A977CF50071C9CE /* UINavigetionController + Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -306,6 +342,9 @@
 		21A759BD2A92321700B4A4FF /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				21232B4B2A974A8D0071C9CE /* ViewModel */,
+				21232B4A2A974A870071C9CE /* Model */,
+				21232B492A974A800071C9CE /* View */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -575,6 +614,7 @@
 			files = (
 				21A759DA2A927F9D00B4A4FF /* LoginVC.xib in Resources */,
 				21A759ED2A93B4DA00B4A4FF /* HomeTableViewCell.xib in Resources */,
+				21232B502A974C200071C9CE /* FavoritesVC.xib in Resources */,
 				21A759E82A93B47000B4A4FF /* HomeVC.xib in Resources */,
 				21A759BA2A9231C500B4A4FF /* SplashVC.xib in Resources */,
 				21A759C82A92486600B4A4FF /* Colors.xcassets in Resources */,
@@ -714,12 +754,16 @@
 				21A759C32A923B0600B4A4FF /* TargetType.swift in Sources */,
 				21A759F42A954C5E00B4A4FF /* AppConfiguration.swift in Sources */,
 				21232B432A964BD90071C9CE /* Helpers.swift in Sources */,
+				21232B552A974E030071C9CE /* RecipesCoreDataModel.swift in Sources */,
+				21232B4F2A974C200071C9CE /* FavoritesVC.swift in Sources */,
 				21A759FA2A95501100B4A4FF /* HomeVCApi.swift in Sources */,
 				21A759CB2A924D2D00B4A4FF /* Colors.swift in Sources */,
 				21A759FE2A9550CD00B4A4FF /* HomeTableViewCellViewModel.swift in Sources */,
 				21A759DE2A937A6A00B4A4FF /* LoginVCViewModel.swift in Sources */,
 				21A759802A9230E000B4A4FF /* AppDelegate.swift in Sources */,
 				21A759EC2A93B4DA00B4A4FF /* HomeTableViewCell.swift in Sources */,
+				21232B532A974DAF0071C9CE /* FavoritesViewModel.swift in Sources */,
+				21232B582A977CF50071C9CE /* UINavigetionController + Extentions.swift in Sources */,
 				21A759C62A923BD200B4A4FF /* internetConnections.swift in Sources */,
 				21232B3A2A9616050071C9CE /* DetailsViewModel.swift in Sources */,
 				21A759D12A9257CD00B4A4FF /* Observable.swift in Sources */,
