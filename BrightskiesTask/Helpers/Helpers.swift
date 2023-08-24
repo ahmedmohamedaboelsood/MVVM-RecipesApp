@@ -4,11 +4,13 @@
 //
 //  Created by Ahmed Abo Elsood on 23/08/2023.
 //
- 
+
+import UIKit
+
 func extractNumbersManuallyFromString(_ input: String) -> [Int] {
     var currentNumber = ""
     var numbers: [Int] = []
-
+    
     for char in input {
         if char.isNumber {
             currentNumber.append(char)

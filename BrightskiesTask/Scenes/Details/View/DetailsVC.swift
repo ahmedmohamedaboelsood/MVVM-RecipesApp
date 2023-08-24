@@ -8,8 +8,11 @@
 import UIKit
 import Kingfisher
 import Cosmos
+
 class DetailsVC: UIViewController {
-    //MARK: - IBOutlets 
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var addtoFavBtn: UIButton!
     @IBOutlet weak var ratingStars: CosmosView!
     @IBOutlet weak var recipeHeadLineLbl: UILabel!
     @IBOutlet weak var ingrediantsTableView: UITableView!
@@ -25,13 +28,20 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     //MARK: - Variables
     var ingrediant : [String]!
-    var cellHeight = 20
+    var cellHeight = 30
     var viewModel : DetailsViewModel
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
   
+    override func viewWillAppear(_ animated: Bool) {
+        if viewModel.fetchData(recipeId: viewModel.recipeId) {
+            addtoFavBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }else{
+            addtoFavBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
     func setupUI(){
         title = "Details"
         ingrediantsTableView.dataSource = self
@@ -63,6 +73,8 @@ class DetailsVC: UIViewController {
         descriptionTxtView.text = viewModel.recipeDescription
         recipeTimeLbl.text = viewModel.recipeTime + " Min"
         ingrediant = viewModel.recipeIngrediants
+        viewModel.delegate = self
+        viewModel.favDelegate = self
         tableViewHeight.constant = CGFloat((ingrediant.count * cellHeight)+35)
     }
     
@@ -73,6 +85,16 @@ class DetailsVC: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    //MARK: - IBActions
+    @IBAction func addToFavoraits(_ sender: Any) {
+        if viewModel.fetchData(recipeId: viewModel.recipeId) {
+            addtoFavBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            viewModel.deleteObjectByID(objectID: viewModel.recipeId)
+        }else{
+            addtoFavBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            viewModel.addProductToCoreData()
+        }
     }
 }
 
@@ -90,4 +112,22 @@ extension DetailsVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(cellHeight)
     } 
+}
+
+extension DetailsVC : DetailsViewModelDelegate , FavoraitsViewModelDelegate{
+    func deletionDone(message: String) {
+        showALert(message: message)
+    }
+    
+    func deletionFail(message: String) {
+        showALert(message: message)
+    }
+    
+    func cashingRecipeIsDone(message: String) {
+        showALert(message: message)
+    }
+    
+    func cashingRecipeIsFail(message: String) {
+        showALert(message: message)
+    }
 }

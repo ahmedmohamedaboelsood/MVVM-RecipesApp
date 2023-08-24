@@ -48,7 +48,7 @@ class HomeViewModel {
     }
     
     func retrieRecipe(recipeID : String) -> HomeDataModel? {
-        guard let remoteMovie = dataSourse?.first(where:{$0.id == recipeID}) else {return nil}
-        return remoteMovie
+        guard let remoteRecipe = dataSourse?.first(where:{$0.id == recipeID}) else {return nil}
+        return remoteRecipe
     }
 }

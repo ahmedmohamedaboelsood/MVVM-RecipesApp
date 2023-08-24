@@ -38,12 +38,35 @@ class HomeVC: UIViewController {
     }
     //MARK: - Functions
     func setupUI(){
+        tableViewSetup()
+        navigatinBarSetup()
+        viewModel.delegate = self
+    }
+    
+    func navigatinBarSetup(){
         title = "Recipes"
+        NavBarFavbutton()
+        navigationItem.hidesBackButton = true
+    }
+    
+    func tableViewSetup(){
         tableView.register(UINib(nibName: HomeTableViewCell.ID, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.ID)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = UIColor.clear
-        viewModel.delegate = self
+    }
+    
+    func NavBarFavbutton(){
+        let heartButton = UIButton(type: .custom)
+        heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        heartButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        heartButton.addTarget(self, action: #selector(heartButtonTapped), for: .touchUpInside)
+        let heartButtonItem = UIBarButtonItem(customView: heartButton)
+        navigationItem.rightBarButtonItem = heartButtonItem
+    }
+    
+    @objc func heartButtonTapped() {
+        navigationController?.pushViewController(FavoritesVC(), animated: true)
     }
     
     func bindLoadingIndicator(){
@@ -93,9 +116,8 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.openRecipeDetails(recipeID: cellDataSource[indexPath.row].id)  
+        self.openRecipeDetails(recipeID: cellDataSource[indexPath.row].id)
     }
-
 }
 
 extension HomeVC : HomeViewModelDelegate{

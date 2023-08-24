@@ -32,9 +32,7 @@ extension UIViewController{
         let alertController = UIAlertController(title: "Alert", message: massege, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default) { _ in
             let vc = VC
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)

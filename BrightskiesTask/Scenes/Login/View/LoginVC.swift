@@ -28,6 +28,7 @@ class LoginVC: UIViewController {
     }
     //MARK: - Functions
     private func setupUI(){
+        navigationItem.hidesBackButton = true
         activityIndicator.stopAnimating()
         viewModel.delegate = self
         hideKeyboardWhenTappedAround()
@@ -75,7 +76,7 @@ class LoginVC: UIViewController {
 
 extension LoginVC : LoginVCViewModelDelegate{
     func loginIsDone(_ message: String) {
-        showALert(message: message)
+        navigationController?.pushViewControllerWithModalTransition(viewController: HomeVC())
     }
     
     func loginIsFail(_ message: String) {

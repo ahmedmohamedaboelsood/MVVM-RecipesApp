@@ -58,7 +58,6 @@ class LoginVCViewModel {
                 delegate?.loginIsFail("Invalid email or password")
             }
         }
-        
     }
     
     func loginwWithValidation(_ email: String?, _ password : String?)->String?{
