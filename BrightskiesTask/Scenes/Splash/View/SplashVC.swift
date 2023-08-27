@@ -47,7 +47,11 @@ class SplashVC: UIViewController {
             let vc = LoginVC()
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
-            self.navigationController?.pushViewControllerWithModalTransition(viewController: LoginVC())
+            if (UserDefaults.standard.string(forKey: "userEmail") != nil){
+                self.navigationController?.pushViewControllerWithModalTransition(viewController: HomeVC())
+            }else{
+                self.navigationController?.pushViewControllerWithModalTransition(viewController: LoginVC())
+            }
         }
     }
 }
