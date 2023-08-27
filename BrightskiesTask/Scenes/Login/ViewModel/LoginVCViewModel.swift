@@ -54,6 +54,8 @@ class LoginVCViewModel {
             isLoading.value = false
             if self.email == email && self.password == password{
                 delegate?.loginIsDone("Logged successfully")
+                UserDefaults.standard.setValue(email, forKey: "userEmail")
+                UserDefaults.standard.setValue(password, forKey: "userPassword")
             }else{
                 delegate?.loginIsFail("Invalid email or password")
             }
