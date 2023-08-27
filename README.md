@@ -12,9 +12,10 @@ Welcome to the Foodies App repository! This is an iOS app that allows users to e
 
 ## Screenshots
 
-<div class="myDiv">
+<div class="myDiv"> 
+
  <img src="https://github.com/ahmedmohamedaboelsood/BrightskiesTask/assets/97084704/2c396f45-52e0-4bf1-b85f-2621c8c87a46" width="150" height="300">
-  <img src="https://github.com/ahmedmohamedaboelsood/BrightskiesTask/assets/97084704/4239b8af-2f40-4bcd-92c6-18f1b4e28978" width="150" height="300">
+  <img src="https://github.com/ahmedmohamedaboelsood/BrightskiesTask/assets/97084704/5e3a830c-76e6-4c96-ad63-976b71579e55" width="150" height="300">
   <img src="https://github.com/ahmedmohamedaboelsood/BrightskiesTask/assets/97084704/4239b8af-2f40-4bcd-92c6-18f1b4e28978" width="150" height="300">
   <img src="https://github.com/ahmedmohamedaboelsood/BrightskiesTask/assets/97084704/12d3085d-6c95-416d-9188-985edc6eba5e" width="150" height="300">
   <img src="https://github.com/ahmedmohamedaboelsood/BrightskiesTask/assets/97084704/52ece648-835b-4f90-8ec8-ef0e4563b265" width="150" height="300">
