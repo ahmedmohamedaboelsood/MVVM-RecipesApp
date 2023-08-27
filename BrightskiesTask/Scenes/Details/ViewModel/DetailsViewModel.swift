@@ -69,6 +69,7 @@ class DetailsViewModel{
         }catch{
             delegate?.cashingRecipeIsFail(message: "Something went wrong")
         }
+        favArray = []
     }
     
     func fetchData(recipeId:String)->Bool{
@@ -114,5 +115,6 @@ class DetailsViewModel{
         } catch {
             favDelegate?.deletionFail(message: "Error deleting object") 
         }
+        favArray = []
     } 
 }
